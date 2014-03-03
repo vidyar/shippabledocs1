@@ -12,7 +12,10 @@ We support the following languages
 .. toctree::
    :maxdepth: 1
 
+   nodejs
+   python
    ruby
+
 
 This list keeps growing and if you need something that you dont see here, drop us a line at 
 

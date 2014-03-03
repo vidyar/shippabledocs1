@@ -2,7 +2,7 @@
 :description: Language specific guide for Ruby
 :keywords: containers, lxc, concepts, explanation, image, minion, shippable, Ruby
 
-.. _langruby:
+.. _ruby:
 
 Ruby
 ====
