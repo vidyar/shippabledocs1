@@ -35,7 +35,10 @@ This section helps you to configure the yml file for your node_js project.
 
 **Test scripts**
 
-- To run your test suites using NPM, add  **npm test**
+- To run your test suites using NPM, specify it using script key.  
+	.. code-block:: bash
+		
+		script: npm test
 
 -  You can also add the testing framework like Vows, Expresso in package.json file.
 
