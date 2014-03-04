@@ -2,7 +2,7 @@
 :description: Language specific guide for Ruby
 :keywords: containers, lxc, concepts, explanation, image, minion, shippable, Ruby
 
-.. _ruby:
+.. _langruby:
 
 Ruby
 ====
@@ -17,7 +17,7 @@ This section helps you to build environment and configuration topics specific to
         # Build Environment
         build_environment: ubuntu1204
 
-- Set the appropriate languge and the version number. You can test against multiple version for a single push by adding more entries. Ruby minions use ``rvm`` by default to set the version
+- Set the appropriate language and the version number. You can test against multiple version for a single push by adding more entries. Ruby minions use ``rvm`` by default to set the version
     .. code-block:: python
         
         # language setting
@@ -47,7 +47,7 @@ This section helps you to build environment and configuration topics specific to
 .. note::
  This binds you to potentially unsupported releases of Rubies. It also extends your build time as downloading and installing a custom Ruby can add an extra 60 seconds or more to your build the first time it installs.
 
-We are using Bundler, ``bundle install`` to install all your gems. We also use ``rake`` by default to run your build and hence you need to specify it in your gemdile
+We are using Bundler, ``bundle install`` to install all your gems. We also use ``rake`` by default to run your build and hence you need to specify it in your gemfile
 
 - If you are using a custom gemfile thats not in default location you can specify it with ``gemfile`` tag
     .. code-block:: python
