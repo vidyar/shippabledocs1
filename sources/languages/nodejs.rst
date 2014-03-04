@@ -62,5 +62,6 @@ This section helps you to configure the yml file for your node_js project.
       
 -  Keep the output of test and code coverage generated in the Shippable folders to get the visualization of your reports.
 
--  If your test runner uses junit format, then you can save the output in shippable/testresults folder inorder for shippable to parse the test reprts. You can also save the output of code coverage in shippable/codecoverage folder to parse the coverage reports.
+-  If your test runner uses junit format, then you can save the output in shippable/testresults folder inorder for shippable to parse the test reports. You can also save the output of code coverage in shippable/codecoverage folder to parse the coverage reports.
+
  
