@@ -361,11 +361,12 @@ Sample Python code using `Redis <https://github.com/Shippable/Redis-buildsample>
 
 **Notifications**
 -----------------
-Shippable can notify you about your build status. By default it will send status of your build like success, failure to the last committer of the repo.
+Shippable can notify you about your build status. If you want to get notified about the status of the builds like success, failure or unstable, then follow the rules below to configure your yml file. We will send the consolidated build reports in individual emails for matrix build projects.
 
 
 Email notification
 ..................
+
 
 You can configure the email notification by specifying the recipients id in ``shippable.yml`` file.
 
@@ -397,6 +398,14 @@ If you do not want to get notified, then you can configure the email notificatio
 
   notifications:
      email: false
+
+If you are the last committer and you want to get notified for each and every commits, then configure the email notifications to true.
+
+.. code-block:: bash
+	
+   notifications:
+      email: true
+	
 
 ----------
 
