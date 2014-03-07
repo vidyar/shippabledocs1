@@ -77,7 +77,7 @@ Our CI environment needs a little information about your project to run the righ
 **Step 4** : Test Visualizations
 --------------------------------
 
-If you would like to use our test visualization feature a couple of easy steps are required. 
+If you would like to use our test visualization feature, then the code coverage output should be in cobertura xml format and test result should be in junit format. Refer Code Sample for more details.
 
 
 --------
