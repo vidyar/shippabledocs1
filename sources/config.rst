@@ -439,3 +439,17 @@ You need to copy the Git URL from your project for deployment in heroku .
 
   after_success :
     - git push git@heroku.com:shroudd-headland-1758.git master
+
+
+----------
+
+**Pull Request**
+----------------
+
+
+Testing Pull request
+.....................
+
+Shippable will integrate with github to show pull request status on CI. Whenever a pull request is opened for your repo, we will run the build for the respective pull request and let you know about the status. You can decide whether to merge the request or not based on the status shown on our CI. If you are accepting the pull request, then we will run one more build for the merged repo and we will send email notifications if you have configured it.
+
+ 

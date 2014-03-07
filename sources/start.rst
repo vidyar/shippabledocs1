@@ -43,7 +43,7 @@ Our CI environment needs a little information about your project to run the righ
     .. code-block:: python
         
         # Build Environment
-        build_environment: Ubuntu 12.04LTS
+        build_environment: Ubuntu 12.04
 
 - Set the appropriate language and the version number. You can test against multiple version for a single push by adding more entries. We support all versions of Node.js as it is auto installed during your first run
     .. code-block:: python
