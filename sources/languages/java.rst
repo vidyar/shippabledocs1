@@ -24,7 +24,7 @@ This section helps you to create a shippable.yml file for your Java project.
 	       - openjdk7
 	       - oraclejdk7
 	       - openjdk6
-	       - oraclejdk6
+	       - oraclejdk8
 
 **Testing using java build tool**
 

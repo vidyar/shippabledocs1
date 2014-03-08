@@ -58,8 +58,6 @@ A set of common tools are available on our minions. The following is a list of a
   - MongoDB
   - Redis
   - ElasticSearch
-  - CouchDB
-  - RabbitMQ
   - Selenium Server
 
 - Headless browser testing tools
@@ -361,7 +359,7 @@ Sample Python code using `Redis <https://github.com/Shippable/Redis-buildsample>
 
 **Notifications**
 -----------------
-Shippable can notify you about your build status. If you want to get notified about the status of the builds like success, failure or unstable, then follow the rules below to configure your yml file. We will send the consolidated build reports in individual emails for matrix build projects.
+Shippable can notify you about your build status. If you want to get notified about the status of the builds like success, failure or unstable, then follow the rules below to configure your yml file. We will send the consolidated build reports in individual emails for matrix build projects. By default we will send the email notifications to last committer.
 
 
 Email notification
@@ -378,7 +376,7 @@ You can configure the email notification by specifying the recipients id in ``sh
           - exampletwo@org.com
 
 
-You can also specify when you want to get notified using change|always|never . Always and never means you should be notified always or never.
+You can also specify when you want to get notified using change|always|never. Always and never means you should be notified always or never.
 change means you want to notify only when the build status changes on the given branch.
 
 .. code-block:: bash
@@ -388,8 +386,8 @@ change means you want to notify only when the build status changes on the given 
            recipients:
                - exampleone@org.com
                - exampletwo@org.com
-             on_success: change
-             on_failure: always
+           on_success: change
+           on_failure: always
 
 
 If you do not want to get notified, then you can configure the email notification to false.
@@ -399,13 +397,6 @@ If you do not want to get notified, then you can configure the email notificatio
   notifications:
      email: false
 
-If you are the last committer and you want to get notified for each and every commits, then configure the email notifications to true.
-
-.. code-block:: bash
-	
-   notifications:
-      email: true
-	
 
 ----------
 
@@ -450,6 +441,6 @@ You need to copy the Git URL from your project for deployment in heroku .
 Testing Pull request
 .....................
 
-Shippable will integrate with github to show pull request status on CI. Whenever a pull request is opened for your repo, we will run the build for the respective pull request and let you know about the status. You can decide whether to merge the request or not based on the status shown on our CI. If you are accepting the pull request, then we will run one more build for the merged repo and we will send email notifications if you have configured it.
+Shippable will integrate with github to show pull request status on CI. Whenever a pull request is opened for your repo, we will run the build for the respective pull request and let you know about the status. You can decide whether to merge the request or not based on the status shown on our CI. If you are accepting the pull request, then we will run one more build for the merged repo and we will send email notifications for the merged repo.
 
  

@@ -29,9 +29,9 @@ We support the following languages
 
 You can test your projects with Minions on
 
-* Ubuntu 12.04 LTE
+* Ubuntu 12.04 LTS
 * Ubuntu 13.10 
-* Windows 2012 R1
+
 
 We support these services natively
 
