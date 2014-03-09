@@ -18,4 +18,4 @@ We support the following languages
    java
    scala
 
-This list keeps growing and if you need something that you dont see here, open a Github issue in our `support repository <https://github.com/Shippable/support>`.
+This list keeps growing and if you need something that you dont see here, open a Github issue in our [support repository] (https://github.com/Shippable/support).
