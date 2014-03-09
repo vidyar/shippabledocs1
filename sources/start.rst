@@ -1,10 +1,10 @@
-:title: Getting Started Test
+:title: Getting Started 
 :description: Basic getting started section
 :keywords: getting started, questions, documentation, shippable
 
 .. _getstarted:
 
-Getting Started
+Getting Started Test
 ===============
 
 **Step 1** : Sign Up
