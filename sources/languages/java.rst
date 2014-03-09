@@ -28,7 +28,7 @@ This section helps you to create a shippable.yml file for your Java project.
 
 **Testing using Java build tool**
 
-**maven**
+**Maven**
 
 - If your repository root has pom.xml file, then our Java builder will use Maven 3 to build it. By default it will run the test using **mvn test**.
 	
@@ -56,4 +56,4 @@ This section helps you to create a shippable.yml file for your Java project.
 	       language: java
 	       install: ant deps
 
-Save the test output in shippable/testresults and the codecoverage output in shippable/codecoverage folder to get the reports parsed. Otherwise you will not find the reports in our CI. 
+Save the test output in shippable/testresults and the codecoverage output in shippable/codecoverage folder to get the reports parsed. If the test and codecoverage output is not saved as specified, you will not find the reports in our CI. 
