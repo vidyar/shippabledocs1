@@ -76,7 +76,7 @@ Our CI environment needs a little information about your project to run the righ
 **Step 4** : Test Visualizations
 --------------------------------
 
-To use Shippable's test visualization feature, your code coverage output needs to be in cobertura xml format and test results should be in junit format. More details here :ref:`Code Samples <samplesref>`. 
+To use Shippable's test visualization feature, your code coverage output needs to be in cobertura xml format and test results should be in junit format. More details can be found in our :ref:`Code Samples <samplesref>`. 
 
 
 --------
