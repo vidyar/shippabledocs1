@@ -5,7 +5,7 @@
 Overview
 =========
 
-Shippable is a SaaS platform to easily add Continuous Integration/Deployment to your Github repositories. It is lightweight, blazing fast, super simple to setup. Code that Shippable builds and tests can be deployed to any Paas providers like Heroku & OpenShift and also to VMs, bare metal, OpenStack clusters, or any major infrastructure provider.	
+Shippable is a SaaS platform that lets you easily add Continuous Integration/Deployment to your Github repositories. It is lightweight, blazing fast, super simple to setup. Code that Shippable builds and tests can be deployed to any Paas providers like Heroku & OpenShift and also to VMs, bare metal, OpenStack clusters, or any major infrastructure provider.	
 
 Common use cases for Shippable include:
 
