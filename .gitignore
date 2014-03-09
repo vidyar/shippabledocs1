@@ -19,6 +19,7 @@ lib
 lib64
 _build
 __pycache__
+Thumbs.db
 .DS_Store
 
 # Installer logs
