@@ -7,23 +7,23 @@
 Python-buildsample
 ==================== 
 
-The goal of this code sample is to show how you can set up and run your repo in shippable platform.
+The goal of this code sample is to show you how to set up and run your repo in shippable.
 
 A sample repository `Python-buildsample <https://github.com/Shippable/Python-buildsample>`_ has been created using `nose <https://pypi.python.org/pypi/nose>`_ and `coverage 3.7  <https://pypi.python.org/pypi/coverage/>`_  .
 
 
-Keep the output generated for test and code coverage in our special folders called Shippable/testresults and Shippable/codecoverage to get the reports parsed and to get the visualization of the reports.The test results must be generated in Junit format.
+Keep the output generated for test and code coverage in the special folder Shippable/testresults and Shippable/codecoverage to get parsed reports parsed and to get a visualization of the reports.The test results must be generated in Junit format.
 
 We need the yml file to analyze the project details. Add the shippable.yml file to the root of your repo by specifying:
 
 
-**Language :** Specify the language used to create the project. Python is used in this sample project.
+**language :** Specify the language used to create the project. Python is used in this sample project.
 
-**version number :** Specify the version numbers against which your build needs to run. We are using "2.7".
+**version number :** Specify the version numbers against which your build needs to run. The sample project uses "2.7".
 
-**Install :** Install the required dependencies for your repo here.
+**install :** Install the required dependencies for your repo here.
 
-**script :** Specify the command to run the test and coverage and save the results in their respective 
+**script :** Specify the command to run the test and coverage and save the results to their respective 
 shippable folders. If you have not created the folders, then you can create it using the before_script key.
 
 **Notification alerts:**  Email notifications are added to get the alerts about the build status.
@@ -45,5 +45,5 @@ Here is the complete yml file for Python-buildsample
       email:
        - exampleone@org.com
 
-Enable the repo Python-buildsample and run it using Ubuntu minion. Once the build finishes execution, you can check for the console output, test and codecoverage results on the respective builds page.
+Enable the repo Python-buildsample and run it using an Ubuntu minion. Once the build finishes execution, you can check for the console output, test and codecoverage results on the respective build's page.
 
