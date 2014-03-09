@@ -69,14 +69,14 @@ Our CI environment needs a little information about your project to run the righ
         script: 
          - npm test
 
-**For full documentation of YML refer** :ref:`HERE <setup>`.
+**Complete documentation of YML is available** :ref:`HERE <setup>`.
 
 --------
 
 **Step 4** : Test Visualizations
 --------------------------------
 
-If you would like to use our test visualization feature, then your code coverage output should be in cobertura xml format and test result should be in junit format. Refer :ref:`Code Samples <samplesref>` for more details. 
+To use Shippable's test visualization feature, your code coverage output needs to be in cobertura xml format and test results should be in junit format. More details here :ref:`Code Samples <samplesref>`. 
 
 
 --------
