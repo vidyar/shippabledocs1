@@ -22,22 +22,22 @@ Each minion starts from a base image and can be customized by specifying ``befor
 Operating Systems
 .................
 
-All our Linux minions start from a vanilla base image from the Docker registry. We support all images as a starting point for your minion. It can be further customized by using the ``before_install`` and ``install`` tags in ``shippable.yml`` that is in the root of your code repository.
+All our Linux minions start from a vanilla base image from the Docker registry. We support all images as a starting point for your minion. Minions can be further customized by using the ``before_install`` and ``install`` tags in ``shippable.yml`` that is in the root of your code repository.
 
 (Coming soon) Our Windows minions are based on AWS AMI for Windows 2012.
 
 State Management
 ................
 
-Shippable maintains state of your minions between builds. We believe that build speed is very important, so reinstalling everything and cloning git repos every single time doesn't make sense. 
+Shippable maintains the state of each minion between builds. We believe that build speed is very important, so reinstalling everything and cloning git repos every single time just doesn't make sense. 
 
-(Coming soon) However we understand the value of testing on pristine environments. Hence we have a commit message tag [reset minion] which will reset your minion to base setting and allow your test to run on a prisitne minion.
+(Coming soon) However, we also understand the value of testing on pristine environments. Hence we have a commit message tag [reset minion] which will reset your minion to its base setting and allow your test to run on a prisitne minion.
 
 
 Common Tools
 ............
 
-A set of common tools are available on our minions. The following is a list of available tools -
+A set of common tools are available on all minions. The following is a list of available tools -
 
 - Latest release of Git repository
 - apt installer
@@ -47,7 +47,7 @@ A set of common tools are available on our minions. The following is a list of a
   - wget
   - OpenSSL
 
-- At least 1 version of (check out documentation for each language for specific versions)
+- At least 1 version of (check out the language documentation for specific versions)
   
   - Ruby
   - Node
@@ -104,18 +104,18 @@ A set of common tools are available on our minions. The following is a list of a
 **Configuration**
 ------------------
 
-This section is generic to all build environments as well as languages. If you are looking for language specific tags, please refer to language guides for more information.
+This section is generic to all build environments and all languages. If you are looking for language specific tags, please refer to our language guides for more information.
 
 ``shippable.yml``
 .................
 
 We believe that developers need complete control of their build configuration. We also realize that most developers don't want to log into a UI to make changes every single time. 
 
-While mulling over the best way to give developers control without asking them to come to our UI, we came across ``.travis.yml``, an open source initiative that created the basic framework for this very problem. Following the same paradigm, we ask you to have ``shippable.yml`` in the root of the repository you want to build. The structure of shippable.yml closely mimics travis since we see no reason to reinvent the wheel. We do have additional tags for added functionality, and these will become more numerous as we evolve our product. 
+While mulling over the best way to give developers control without asking them to go through our UI, we came across ``.travis.yml``, an open source initiative that created the basic framework for this very problem. Following the same paradigm, we ask you to have ``shippable.yml`` in the root of the repository you want to build. The structure of shippable.yml closely mimics travis since we see no reason to reinvent the wheel. We do have additional tags for added functionality, and these will become more numerous as we evolve Shippable. 
 
-Since shippable.yml is a superset of ``.travis.yml`` , we support ``.travis.yml`` natively as well. So if you have one in the root of your repo, we will read the config and set up your CI.
+Since shippable.yml is a superset of ``.travis.yml`` , we support ``.travis.yml`` natively as well. So if you have a travis.yml in the root of your repo, we will read the config and set up your CI.
 
-At a minimum, we need your language and build version specified in the yml. We will then default to the most common commands.
+At a minimum, Shippable needs to have your language and build version specified in the yml. We will then default to the most common commands.
 
 Build Flow
 ..........
