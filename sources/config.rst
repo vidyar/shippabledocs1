@@ -367,7 +367,7 @@ Sample Python code using `Redis <https://github.com/Shippable/Redis-buildsample>
 
 **Notifications**
 -----------------
-Shippable can notify you about your build status. If you want to get notified about the status of the builds like success, failure or unstable, then follow the rules below to configure your yml file. We will send the consolidated build reports in individual emails for matrix build projects. By default we will send the email notifications to last committer.
+Shippable can notify you about your build status. If you want to get notified about the status of the builds like success, failure or unstable, then follow the rules below to configure your yml file. We will send the consolidated build reports in individual emails for matrix build projects. By default we will send the email notifications to the last committer.
 
 
 Email notification
@@ -452,3 +452,22 @@ Testing Pull request
 Shippable will integrate with github to show pull request status on CI. Whenever a pull request is opened for your repo, we will run the build for the respective pull request and let you know about the status. You can decide whether to merge the request or not based on the status shown on our CI. If you are accepting the pull request, then we will run one more build for the merged repo and we will send email notifications for the merged repo.
 
  
+--------
+
+**Collaborators**
+------------------
+
+Shippable will automatically add your github collaborators when you create a project and by default we will assign them the role **Build engineer**. You can see the list of collaborators or change there role by expanding your repo on settings page.
+
+
+Roles
+-------
+
+There are two types of roles that users can belong to.
+
+**Owner :** 
+Owner is the highest role. This role permits users to create, run and to delete a project. Owners can also manage permissions and even create other co-owners.
+
+
+**Build engineer :** 
+Build engineer can run or manage projects that are already setup. They have full visibility into the project and can trigger the build.
