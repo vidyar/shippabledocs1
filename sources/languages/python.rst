@@ -25,7 +25,7 @@ This section helps you to configure the yml file for your python project.
           # language setting
              language: python
 
-          # version numbers, testing against two versions of node
+          # version numbers
             python:
              - "2.7"
              - "3.2"
