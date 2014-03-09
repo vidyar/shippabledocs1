@@ -36,7 +36,7 @@ Our CI environment needs a little information about your project to run the righ
 
   **If you use TravisCI,  we support** ``.travis.yml`` **natively, so that you can test your repos in parallel with Shippable and compare the speed and rich visualizations.**
 
-- Tell us what your build environment is. This is an optional setting and if ommitted, Ubuntu 12.04 is used as a default
+- Tell us what your build environment is. This is an optional setting and if omitted, Ubuntu 12.04 is used as a default
     .. code-block:: python
         
         # Build Environment
