@@ -8,7 +8,7 @@ java
 ======
 This section helps you to create a shippable.yml file for your Java project.
 
-- Tell us what your build environment is. This is an option setting and if ommitted Ubuntu 12.04 is used as a default
+- Tell us what your build environment is. This is an option setting and if omitted Ubuntu 12.04 is used as a default
     .. code-block:: python
         
         # Build Environment
