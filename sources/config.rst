@@ -140,7 +140,7 @@ The outcome of all the steps upto 7 determine the outcome of the build status. T
 **Other useful configs**
 ------------------------
 
-Shippable uses Docker containers to provide your with isolation and a dedicated build environment. Our command sessions are not sticky throughout the build, but they are sticky within a section of the build. For e.g. ``cd`` is sticky within ``before_script`` tag of ``shippable.yml``
+Shippable uses Docker containers to provide you with isolation and a dedicated build environment. Our command sessions are not sticky throughout the build, but they are sticky within the same section of the build. For e.g. ``cd`` is sticky within the ``before_script`` tag of ``shippable.yml``
 
 script
 ......
@@ -169,11 +169,11 @@ In the example above, our minions will run ``./minions/do_something.sh`` and the
 
 git submodules
 ..............
-Shippable supports git submodules. This is a cool functionality of breaking your projects down into manageable chunks. We automatically initialize ``.gitmodules`` file in the root of the repo. 
+Shippable supports git submodules. This is a cool functionality of breaking your projects down into manageable chunks. We automatically initialize the ``.gitmodules`` file in the root of the repo. 
 
 .. note::
 
-  If you are using private repos, add the deploy keys so that our minion ssh keys are allowed to pull from the repo. This can be done through shippable.com
+  If you are using private repos, add the deploy keys so that our minion ssh keys are allowed to pull from the repo. This can be done via shippable.com
 
 If its your own public repos then do this
 
@@ -182,10 +182,10 @@ If its your own public repos then do this
   # for public modules use
   git://github.com/someuser/somelibrary.git
 
-  # for private modules you can use
+  # for private modules use
   git@github.com:someuser/somelibrary.git
 
-If you would like to turn submodules off completely use this
+If you would like to turn submodules off completely -
 
 .. code-block:: python
         
@@ -197,7 +197,7 @@ If you would like to turn submodules off completely use this
 environment variables
 .....................
 
-We believe this is the most powerful feature of our platform. You can test your projects with multiple different setting for every push into your repo. Every statement of this command will trigger a seperate build with that version of the env variables. 
+We believe this is one of the powerful features Shippable offers. You can test your projects with multiple different settings for every push into your repo. Every statement of this command will trigger a seperate build with that specific version of the environment variables. 
 
 .. code-block:: python
         
@@ -209,7 +209,7 @@ We believe this is the most powerful feature of our platform. You can test your 
 
 .. note::
 
-  Env variables can create exponential number of builds when comined with ``jdk`` & ``rvm, node_js etc.`` i.e. its multiplicative
+  Env variables can create an exponential number of builds when comined with ``jdk`` & ``rvm, node_js etc.`` i.e. it is multiplicative
 
 In this setting **4 builds** are triggered
 
@@ -227,7 +227,7 @@ In this setting **4 builds** are triggered
 include & exclude branches
 ..........................
 
-You can only build specific branches or exclude them if you choose to do so. 
+You can build specific branches or exclude them if needed. 
 
 .. code-block:: python
 
@@ -247,7 +247,7 @@ You can only build specific branches or exclude them if you choose to do so.
 build matrix
 ............
 
-This is by far the most powerful feature that Shippable has to offer. You can trigger multiple different test passes for a single code push. You might want to test agaisnt different versions of ruby, or different aspect ratio for your Selenium tests or best yet, just different jdk versions. You can so it all with our matirx build mechanism
+This is another powerful feature that Shippable has to offer. You can trigger multiple different test passes for a single code push. You might want to test agaisnt different versions of ruby, or different aspect ratios for your Selenium tests or best yet, just different jdk versions. You can do it all with Shippable's matrix build mechanism.
 
 .. code-block:: python
 
@@ -268,7 +268,7 @@ This is by far the most powerful feature that Shippable has to offer. You can tr
     - ISOLATED=true
     - ISOLATED=false
 
-The above example will fire 36 different builds for each psu. Whoa! Need more Minions?
+The above example will fire 36 different builds for each push. Whoa! Need more minions?
 
 
 
@@ -276,9 +276,9 @@ The above example will fire 36 different builds for each psu. Whoa! Need more Mi
 
 **Services**
 -----------------
-Shippable offers a host of pre-installed services to make it easy to run your builds. In addition to these you can install other services also by using ``install`` tag of ``shippable.yml``. 
+Shippable offers a host of pre-installed services to make it easy to run your builds. In addition to these you can install other services also by using the ``install`` tag of ``shippable.yml``. 
 
-All the services are turned off by default and can be turned on by using ``services:`` tag.
+All the services are turned off by default and can be turned on by using the ``services:`` tag.
 
 MongoDB
 .......
@@ -367,7 +367,7 @@ Sample Python code using `Redis <https://github.com/Shippable/Redis-buildsample>
 
 **Notifications**
 -----------------
-Shippable can notify you about your build status. If you want to get notified about the status of the builds like success, failure or unstable, then follow the rules below to configure your yml file. We will send the consolidated build reports in individual emails for matrix build projects. By default we will send the email notifications to the last committer.
+Shippable can notify you about the status of your build. If you want to get notified about the build status (success, failure or unstable), you need to follow the rules below to configure your yml file. Shippable will send the consolidated build reports in individual emails for matrix build projects. By default Shippable will send the email notifications to the last committer.
 
 
 Email notification
@@ -384,8 +384,8 @@ You can configure the email notification by specifying the recipients id in ``sh
           - exampletwo@org.com
 
 
-You can also specify when you want to get notified using change|always|never. Always and never means you should be notified always or never.
-change means you want to notify only when the build status changes on the given branch.
+You can also specify when you want to get notified using change|always|never. Change means you want to be notified only when the build status changes on the given branch. Always and never mean you want to be notified always or never respectively.
+
 
 .. code-block:: bash
  
@@ -398,7 +398,7 @@ change means you want to notify only when the build status changes on the given 
            on_failure: always
 
 
-If you do not want to get notified, then you can configure the email notification to false.
+If you do not want to get notified, you can configure email notifications to false.
 
 .. code-block:: bash
 
@@ -414,13 +414,13 @@ If you do not want to get notified, then you can configure the email notificatio
 Continuous deployment to Heroku
 ................................
 
-Heroku supports Ruby, Node.js, Python, so you can use these languages to build and deploy apps on Heroku. You can deploy to your own server by adding the custom after_success:. For this you need to add the Public key that was generated for your subscription in shippable to set up continous deployment on providers.
+Heroku supports Ruby, Node.js, Python, so you can use these languages to build and deploy apps on Heroku. You can deploy to your own server by adding a custom after_success:. For this you need to add the Public key that was generated for your subscription in Shippable to set up continous deployment on providers.
 
 * Go to settings and copy the SSH Key or public key generated for your subscription.
 * Log In to Heroku and add the SSH key to your account 
 
 
-A Sample deployment configurations to your shippable.yml file is given below
+A sample deployment configuration in your shippable.yml file is given below
 
 .. code-block:: bash
 
@@ -428,7 +428,7 @@ A Sample deployment configurations to your shippable.yml file is given below
     - git push  git@heroku.com:shroudd-headland-1758.git master
 
 
-You need to copy the Git URL from your project for deployment in heroku .
+You need to copy the Git URL from your project for deployment in Heroku.
 
 * Go to apps and select your project
 * Go to the settings page of your project and copy the Git URL
@@ -446,7 +446,7 @@ You need to copy the Git URL from your project for deployment in heroku .
 ----------------
 
 
-Shippable will integrate with github to show pull request status on CI. Whenever a pull request is opened for your repo, we will run the build for the respective pull request and let you know about the status. You can decide whether to merge the request or not based on the status shown on our CI. If you are accepting the pull request, then we will run one more build for the merged repo and we will send email notifications for the merged repo.
+Shippable will integrate with github to show your pull request status on CI. Whenever a pull request is opened for your repo, we will run the build for the respective pull request and notify you about the status. You can decide whether to merge the request or not, based on the status shown. If you accept the pull request, Shippable will run one more build for the merged repo and will send email notifications for the merged repo.
 
  
 --------
@@ -454,13 +454,13 @@ Shippable will integrate with github to show pull request status on CI. Whenever
 **Collaborators**
 ------------------
 
-Shippable will automatically add your github collaborators when you create a project and by default we will assign them the role **Build engineer**. You can see the list of collaborators or change there role by expanding your repo on settings page.
+Shippable will automatically add your github collaborators when you create a project and by default they will be assigned the role of **Build engineer**. You can see the list of collaborators or change their role by expanding your repo on the settings page.
 
 
-There are two types of roles that users can belong to.
+There are two types of roles that users can have -
 
 **Owner :** 
-Owner is the highest role. This role permits users to create, run and to delete a project. Owners can also manage permissions and even create other co-owners.
+Owner is the highest role. This role permits users to create, run and delete a project. Owners can also manage permissions and create other co-owners.
 
 
 **Build engineer :** 
@@ -473,5 +473,5 @@ Build engineer can run or manage projects that are already setup. They have full
 -----------------------
 
 
-If your script or test suite hangs for a long time or there hasn't been any log output in 10 minutes, then we will forcefully terminate the build by adding a message on console log.
+If your script or test suite hangs for a long time or there hasn't been any log output in 10 minutes, then Shippable will forcefully terminate the build by adding a message on console log.
 
