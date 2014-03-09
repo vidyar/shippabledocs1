@@ -8,11 +8,11 @@
 Node.js-buildsample
 ======================
 
-The goal of this code sample is to show how you can set up and run your repo in shippable platform.
+The goal of this code sample is to show you how to set up and run your repo in Shippable.
 
 A sample repository `Node.js-buildsample <https://github.com/Shippable/Node.js-buildsample>`_  has been created using the coverage tool `istanbul  <https://npmjs.org/package/istanbul>`_  and the testing tool `mocha  <https://npmjs.org/package/mocha>`_ .
 
-Keep the test and code coverage outputs in our special folders called Shippable/testresults and Shippable/codecoverage to get the reports parsed.
+Keep the test and code coverage output in the special folders Shippable/testresults and Shippable/codecoverage to get your reports parsed.
 
 We need the yml file to analyze the project details. So add the shippable.yml file to the root of your repo by specifying:
 
@@ -20,9 +20,9 @@ We need the yml file to analyze the project details. So add the shippable.yml fi
 
 **version numbers :** 0.10 is used.
 
-**after_script:** Specify the command to run the test and coverage and save the results in their respective shippable folders. If you have not created the folders, then you can create it using the before_script key.
+**after_script:** Specify the command to run tests and code coverage and save the results in their respective shippable folders. If you have not created the folders, you can create them using the before_script key.
 
-**Notification alerts:**  Email notifications are added to get the alerts about the build status.
+**Notification alerts:**  Email notifications are added to get alerts about the build status.
 
 Here is the complete yml file for Node.js-buildsample.
 
@@ -39,4 +39,4 @@ Here is the complete yml file for Node.js-buildsample.
   	  email:
     		- exampleone@org.com
 
-Enable the repo Node.js-buildsample and run it using Ubuntu minion. Once the build finishes execution, you can check for the console output, test and codecoverage results on the respective builds page.
+Enable the repo Node.js-buildsample and run it using an Ubuntu minion. Once the build finishes execution, you can check for the console output, test and codecoverage results on the respective build's page.
