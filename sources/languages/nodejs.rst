@@ -4,7 +4,7 @@
 
 .. _langnodejs:
 
-nodejs 
+Nodejs 
 ======
 
 This section helps you to configure the yml file for your node_js project.
