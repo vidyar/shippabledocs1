@@ -9,7 +9,7 @@ scala
 
 This section helps you specify the build environment and other configuration specific to Scala projects.
 
-- Tell us what your build environment is. This is an optional setting and if omitted Ubuntu 12.04 is used as a default
+- Tell us what your build environment is. This is an optional setting and if omitted Ubuntu 12.04 is used as the default.
     .. code-block:: python
         
         # Build Environment
