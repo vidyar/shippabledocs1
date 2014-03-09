@@ -7,17 +7,17 @@
 Ruby
 ====
 
-This section helps you to build environment and configuration topics specific to Ruby projects.
+This section helps you to set the build environment and other configuration specific to Ruby projects.
 
 **Ruby versions for testing** :
 
-- Tell us what your build environment is. This is an option setting and if ommitted Ubuntu 12.04 is used as a default
+- Tell us what your build environment is. This is an optional setting and if omitted Ubuntu 12.04 is used as the default
     .. code-block:: python
         
         # Build Environment
         build_environment: ubuntu1204
 
-- Set the appropriate language and the version number. You can test against multiple version for a single push by adding more entries. Ruby minions use ``rvm`` by default to set the version
+- Set the appropriate language and version number. You can test against multiple versions for a single push by adding more entries. Ruby minions use ``rvm`` by default to set the version
     .. code-block:: python
         
         # language setting
@@ -36,27 +36,27 @@ This section helps you to build environment and configuration topics specific to
          - ree
 	
 .. note::
- We are setting multiple versions of Ruby here which means a single push to repo will trigger multiple builds 
+ We are setting multiple versions of Ruby here which means a single push to repo will trigger multiple builds. 
 
-- Though we pre-install a few version of Ruby, all the ruby versions are supported. As long as they're available as a binary for Ubuntu 12.04, you can specify custom patchlevels
+- Though we pre-install only a few versions of Ruby, all versions of Ruby are supported. As long as they are available as a binary for Ubuntu 12.04, you can specify custom patchlevels.
     .. code-block:: python
         
         language: ruby
         rvm: 2.0.0-p247
 
 .. note::
- This binds you to potentially unsupported releases of Rubies. It also extends your build time as downloading and installing a custom Ruby can add an extra 60 seconds or more to your build the first time it installs.
+ This binds you to potentially unsupported releases of Ruby. It also extends your build time as downloading and installing a custom Ruby can add an extra 60 seconds or more to your build the first time it installs.
 
 We are using Bundler, ``bundle install`` to install all your gems. We also use ``rake`` by default to run your build and hence you need to specify it in your gemfile
 
-- If you are using a custom gemfile thats not in default location you can specify it with ``gemfile`` tag
+- If you are using a custom gemfile thats not in default location you can specify it with the ``gemfile`` tag
     .. code-block:: python
         
         # gemfile tag
         gemfile: gemfiles/Gemfile.ci
 
 .. note::
- If you give multiple gemfiles in the above tag, a matrix build is triggered for every version of the gemfile
+ If you specify multiple gemfiles in the above tag, a matrix build is triggered for every version of the gemfile.
 
 
 - Additional arguments can be added to ``bundle install`` command and we will append them to the default command
@@ -71,7 +71,7 @@ We are using Bundler, ``bundle install`` to install all your gems. We also use `
         # before_install tag
         before_install: gem install bundler --pre
 
-- You could also set multiple environment variables and test against multiple different version by using the env variable in your code. This will fire 3 different builds, one for each env variable
+- You can also set multiple environment variables and test against multiple different versions by using the env variable in your code. This will fire 3 different builds, one for each env variable
     .. code-block:: python
         
         # env tag
@@ -80,7 +80,7 @@ We are using Bundler, ``bundle install`` to install all your gems. We also use `
 		 - CHEF_VERSION=0.10.2
 		 - CHEF_VERSION=0.10.4
 
-- You could also test against multiple ``jdk`` versions
+- You can also test against multiple ``jdk`` versions
     .. code-block:: python
         
         # jdk tag
@@ -89,7 +89,7 @@ We are using Bundler, ``bundle install`` to install all your gems. We also use `
 		 - oraclejdk7
 		 - openjdk6
 
-- One can also update the versions on your minion by running a simple command or even downgrade if you choose to. The below script will upgrade and downgrade as a demonstration
+- You can also update the versions on your minion by running a simple command or even downgrade if you choose to. The script below demonstrates an upgrade and downgrade -
     .. code-block:: python
         
 		before_install:
