@@ -23,7 +23,7 @@ This section helps you to set the build environment and other configuration spec
         # language setting
         language: ruby
 
-        # version numbers, testing against two versions of ruby
+        # version numbers
         rvm:
          - 1.8.7
          - 1.9.2
