@@ -4,7 +4,7 @@
 
 .. _langjava :
 
-java 
+Java 
 ======
 This section helps you to create a shippable.yml file for your Java project.
 
@@ -14,7 +14,7 @@ This section helps you to create a shippable.yml file for your Java project.
         # Build Environment
         build_environment: ubuntu1204
 
-- Set the appropriate language and the version number. You can test against Openjdk6, Openjdk7, Oraclejdk6 and Oraclejdk7 for a single push by adding more entries. Java minions use ``jdk`` by default to set the runtime platform.
+- Set the appropriate language and the version number. You can test against Openjdk6, Openjdk7, Oraclejdk7 and Oraclejdk8 for a single push by adding more entries. Java minions use ``jdk`` by default to set the runtime platform.
 	.. code-block:: python
 	
      		# language setting
