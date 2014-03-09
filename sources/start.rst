@@ -20,14 +20,14 @@ After authorization, you will be authenticated by Github and redirected back to 
 -------
 
 **Step 2** : Enable CI for Github repos
----------------------------
+---------------------------------------
 
 You can now go to your repositories page by clicking on Settings in the top menu. You will see a list of repositories for your personal accounts and any organizational accounts you have access to. Enable the repo that you wish to do build.
 
 -------
 
 **Step 3** : Create YML file
------------------------------
+----------------------------
 
 Our CI environment needs a little information about your project to run the right build steps. We look for a file called ``shippable.yml`` in the root folder of your repo for this info. 
 
@@ -36,13 +36,13 @@ Our CI environment needs a little information about your project to run the righ
 
   **If you use TravisCI,  we support** ``.travis.yml`` **natively, so that you can test your repos in parallel with Shippable and compare the speed and rich visualizations.**
 
-- **Tell us what your build environment is. This is an optional setting and if omitted, Ubuntu 12.04 is used as a default.**
+* Tell us what your build environment is. This is an optional setting and if omitted, Ubuntu 12.04 is used as a default.
     .. code-block:: python
         
         # Build Environment
         build_environment: Ubuntu 12.04
 
-- Set the appropriate language and the version number. You can test against multiple versions for a single push by adding more entries. We support all versions of Node.js as it is auto installed during your first run.
+* Set the appropriate language and the version number. You can test against multiple versions for a single push by adding more entries. We support all versions of Node.js as it is auto installed during your first run.
     .. code-block:: python
         
         # language setting
@@ -84,10 +84,10 @@ If you would like to use our test visualization feature, then your code coverage
 
 Builds can be triggered through webhooks or manually through Shippable.com. 
 
-Webhooks -
+**Webhooks**
 Webhooks are user-defined HTTP callbacks. They are usually triggered by some event, such as pushing code to a repository or creating a pull request. Your builds will run automatically when webhooka are triggered. Further details are here.
 
-Manual Builds - 
+**Manual Builds** 
 
 - Select Builds from the top menu and then select the project from the list in the sidebar to the left. 
 - Click on the Run button. Immediately, the console log from your build minion starts to stream to your browser through sockets. If your build does not start or get queued, make sure you have enough minions to run the build by going to the minions page.
