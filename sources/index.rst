@@ -14,7 +14,7 @@ Common use cases for Shippable include:
 - Automating the packaging and deployment of web applications
 - Automated testing and continuous integration/deployment
 
-**Shippable is 100% free to use, even for private repositories.**
+.. seealso:: **Shippable is 100% free to use, even for private repositories.**
 
 We currently support the following languages - 
 
