@@ -446,9 +446,6 @@ You need to copy the Git URL from your project for deployment in heroku .
 ----------------
 
 
-Testing Pull request
-.....................
-
 Shippable will integrate with github to show pull request status on CI. Whenever a pull request is opened for your repo, we will run the build for the respective pull request and let you know about the status. You can decide whether to merge the request or not based on the status shown on our CI. If you are accepting the pull request, then we will run one more build for the merged repo and we will send email notifications for the merged repo.
 
  
@@ -459,9 +456,6 @@ Shippable will integrate with github to show pull request status on CI. Whenever
 
 Shippable will automatically add your github collaborators when you create a project and by default we will assign them the role **Build engineer**. You can see the list of collaborators or change there role by expanding your repo on settings page.
 
-
-Roles
--------
 
 There are two types of roles that users can belong to.
 
