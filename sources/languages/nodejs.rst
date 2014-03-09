@@ -2,7 +2,7 @@
 :description:  language specific guide for node_js
 :keywords: nodejs, mocha, npm, node
 
-.. _nodejs:
+.. _langnodejs:
 
 nodejs 
 ======
