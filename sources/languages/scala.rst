@@ -4,7 +4,7 @@
 
 .. _langscala:
 
-scala 
+Scala 
 ======
 
 This section helps you specify the build environment and other configuration specific to Scala projects.
@@ -27,16 +27,21 @@ This section helps you specify the build environment and other configuration spe
 
 - Scala builder assumes dependency management based on projeccts like Maven, Gradle or SBT and it will pull down project dependencies automatically before running tests.
 
-- To test against multiple JDKs, use jdk tags. For example, to test against the oraclejdk6, oraclejdk7, openjdk6 and openjdk7
+- To test against multiple JDKs, use jdk tags. For example, to test against the oraclejdk8, oraclejdk7, openjdk6 and openjdk7
 	.. code-block:: bash
 
 	      jdk:
-		- oraclejdk6
+		- oraclejdk8
   		- oraclejdk7
   	        - openjdk6
 		- openjdk7
 
 **SBT projects :**
 
-- If your repository root contains a project directory or a build.sbt file, then the Scala builder will use sbt ++$SHIPPABLE_SCALA_VERSION test to run your test suite.
+- If your repository root has **Project** directory or build.sbt file, then our scala builder will run the test suite using 
+    .. code-block:: python
+
+      sbt ++$SHIPPABLE_SCALA_VERSION test 
+
+ 
 	   
