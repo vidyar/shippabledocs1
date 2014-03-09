@@ -465,3 +465,13 @@ Owner is the highest role. This role permits users to create, run and to delete 
 
 **Build engineer :** 
 Build engineer can run or manage projects that are already setup. They have full visibility into the project and can trigger the build.
+
+
+--------
+
+**Build Termination**
+-----------------------
+
+
+If your script or test suite hangs for a long time or there hasn't been any log output in 10 minutes, then we will forcefully terminate the build by adding a message on console log.
+
