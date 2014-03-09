@@ -8,7 +8,7 @@
 
 // Function to make the sticky header possible
 function shiftWindow() { 
-    scrollBy(0, -70);
+    scrollBy(0, -95);
     console.log("window shifted")
 }
 
