@@ -197,11 +197,11 @@ h1, h2, h3, h4, h5, h6, legend {
 	font-family: 'Open Sans', sans-serif;
 }
 h1 {
-	font-size: 44px;
+	font-size: 32px;
 	line-height: 44px;
 	font-weight: 300;
 	font-style: normal;
-	text-align:center;
+	text-align:left;
 	text-transform:uppercase;
 	position:relative;
 	letter-spacing: 0.1em;
@@ -248,7 +248,7 @@ h1.noSubtitle{
 
 
 h2 {
-	font-size:24px;
+	font-size:20px;
 	line-height: 24px;
 	font-weight: 300;
 	font-style: normal;
