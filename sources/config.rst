@@ -7,33 +7,37 @@
 A bit deeper
 ============
 
-We know that Build Minions and Build configurations are two most important things that you care about. The sections below talk about these in detail.
+Build Minions and Build configuration are two things that you should care the most about when using Shippable. The sections below talk about these in greater detail.
 
 
 **Minions**
 -----------
 
-Minions are containers that will run your builds and tests. You can think of it as a Build VM. More the number of minions you have, more parallel builds can run.  
+Minions are docker based containers that run your builds and tests. You can think of them as Build VMs. Each minion runs one build at a time, so more the number of minions you have, more the concurrency you will get.  
 
-Each minion starts from a base image and can be further customized by using before_instal scripts in the YML file. It can be configured to run any package, library or a service that your application requires. These are some of the preinstalled stuff that you can use to customize it even further. 
+We automatically create one minion for you when you first sign in to Shippable. Depending on your subscription, you can create more minions by going to Settings->Minions and clicking on the + sign.
 
-Operating System
-................
+Each minion starts from a base image and can be customized by specifying ``before_install`` scripts in the YML file. It can be configured to run any package, library, or service that your application requires. There are some preinstalled tools and services that you can use to customize them even further. 
 
-All our Linux minions start from a vainilla base image from the Docker registry. We will support all the images as a starting point for your minion. It can be further customized by using ``before_install`` and ``install`` tag on ``shippable.yml`` that is in of your code repository.
+Operating Systems
+.................
 
-Our Windows minions are based on AWS AMI for Windows 2012.
+All our Linux minions start from a vanilla base image from the Docker registry. We will support all images as a starting point for your minion. It can be further customized by using ``before_install`` and ``install`` tags in ``shippable.yml`` that is in the root of your code repository.
+
+(Coming soon) Our Windows minions are based on AWS AMI for Windows 2012.
 
 State Management
 ................
 
-Shippable maintains state of your minions from every build. We believe in speed and reinstalling everything and cloning git repo every single time does not make sense. However we understand the value of testing on pristine environments. Hence we have a commit message tag [reset minion] which will reset your minion to base setting and allow your test to run on a prisitne minion.
+Shippable maintains state of your minions between builds. We believe that build speed is very important, so reinstalling everything and cloning git repos every single time doesn't make sense. 
+
+(Coming soon) However we understand the value of testing on pristine environments. Hence we have a commit message tag [reset minion] which will reset your minion to base setting and allow your test to run on a prisitne minion.
 
 
 Common Tools
 ............
 
-A set of common tools are available on our minions. The following is a list of available tools
+A set of common tools are available on our minions. The following is a list of available tools -
 
 - Latest release of Git repository
 - apt installer
@@ -43,7 +47,7 @@ A set of common tools are available on our minions. The following is a list of a
   - wget
   - OpenSSL
 
-- Atleast 1 version of 
+- At least 1 version of (check out documentation for each language for specific versions)
   
   - Ruby
   - Node
@@ -100,27 +104,31 @@ A set of common tools are available on our minions. The following is a list of a
 **Configuration**
 ------------------
 
-This section is documentation thats generic to all build environments as well as languages. If you would like to know language specific tags please refer to language guides for more information
+This section is generic to all build environments as well as languages. If you are looking for language specific tags, please refer to language guides for more information.
 
-``shippable.yml`` Why do you need it?
-.....................................
+``shippable.yml``
+.................
 
-We subscribe to the notion that build configuration is something that developers need complete control of. We also recognize the fact that most developers do not like to log into a UI to make changes every single time. As a result we got inspired by ``.travis.yml`` an opensource initiative that created the basic framework for this. We natively support ``.travis.yml`` if you already have that in your project. We do have some additional tags for added funtionality.
+We believe that developers need complete control of their build configuration. We also realize that most developers don't want to log into a UI to make changes every single time. 
 
-At a minimum we need to know what your language and build version is and we try to default most of your common commands for that.
+While mulling over the best way to give developers control without asking them to come to our UI, we came across ``.travis.yml``, an open source initiative that created the basic framework for this very problem. Following the same paradigm, we ask you to have ``shippable.yml`` in the root of the repository you want to build. The structure of shippable.yml closely mimics travis since we see no reason to reinvent the wheel. We do have additional tags for added functionality, and these will become more numerous as we evolve our product. 
+
+Since shippable.yml is a superset of ``.travis.yml`` , we support ``.travis.yml`` natively as well. So if you have one in the root of your repo, we will read the config and set up your CI.
+
+At a minimum, we need your language and build version specified in the yml. We will then default to the most common commands.
 
 Build Flow
 ..........
 
-When we receive a build trigger, either through a manual run or a webhook the following is the sequence of operations
+When we receive a build trigger through a webhook or manual run, we execute the following steps - 
 
 1. Clone/Pull the project from Github. This depends on whether the minion is in pristine state or not
 2. ``cd`` into the workspace
 3. Checkout the commit that is getting built
-4. Run the ``before_install`` section. This is typically used to prep your minion and update any packages etc.
+4. Run the ``before_install`` section. This is typically used to prep your minion and update any packages
 5. Run ``install`` section to install any project specific libraries or packages
-6. Run ``before_script`` section to create any folders, unzip files etc that might be needed for the test. Some users also restore DBs etc. here
-7. Eun the ``script`` command which all your tests
+6. Run ``before_script`` section to create any folders and unzip files that might be needed for testing. Some users also restore DBs etc. here
+7. Run the ``script`` command which runs build and all your tests
 8. Run either ``after_success`` or ``after_failure`` commands
 9. Run ``after_script`` commands
 
@@ -132,11 +140,11 @@ The outcome of all the steps upto 7 determine the outcome of the build status. T
 **Other useful configs**
 ------------------------
 
-Shippable uses Docker containers to provide your with isolation and a dedicated build environment. Our command sessions are not sticky throughout the build, but they are sticky within a section of the build for e.g. ``cd`` is sticky within ``before_script`` tag of ``shippable.yml``
+Shippable uses Docker containers to provide your with isolation and a dedicated build environment. Our command sessions are not sticky throughout the build, but they are sticky within a section of the build. For e.g. ``cd`` is sticky within ``before_script`` tag of ``shippable.yml``
 
 script
 ......
-You can run any script file as part of your YML file. The only requirement is that it has a valid shebang command and the right ``chmod`` permissions. 
+You can run any script file as part of your configuration, as long as it has a valid shebang command and the right ``chmod`` permissions. 
 
 .. code-block:: python
         
@@ -147,7 +155,7 @@ You can run any script file as part of your YML file. The only requirement is th
 
 command collections
 ...................
-``shippable.yml`` supports collections under each tag. This is nothing more than YML functionality and we will run it one command at a time
+``shippable.yml`` supports collections under each tag. This is nothing more than YML functionality and we will run it one command at a time.
 
 .. code-block:: python
         
@@ -156,7 +164,7 @@ command collections
    - ./minions/do_something.sh 
    - ./minions/do_something_else.sh 
 
-In the example above, our minions will run ``./minions/do_something.sh`` and then run ``./minions/do_something-else.sh``. The only requirement is that all of these return a ``0`` exit code. Else the build fails
+In the example above, our minions will run ``./minions/do_something.sh`` and then run ``./minions/do_something-else.sh``. The only requirement is that all of these operations return a ``0`` exit code. Else the build will fail.
 
 
 git submodules
