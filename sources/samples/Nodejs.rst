@@ -16,13 +16,13 @@ Keep the test and code coverage output in the special folders Shippable/testresu
 
 We need the yml file to analyze the project details. So add the shippable.yml file to the root of your repo by specifying:
 
-**Language :** Specify the language used to create the project.  We have used node_js in our project.
+**language :** Specify the language used to create the project.  node_js is used  in our project.
 
 **version numbers :** 0.10 is used.
 
 **after_script:** Specify the command to run tests and code coverage and save the results in their respective shippable folders. If you have not created the folders, you can create them using the before_script key.
 
-**Notification alerts:**  Email notifications are added to get alerts about the build status.
+**notification alerts:**  Email notifications are added to get alerts about the build status.
 
 Here is the complete yml file for Node.js-buildsample.
 
