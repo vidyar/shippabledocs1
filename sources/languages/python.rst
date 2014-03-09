@@ -11,7 +11,7 @@ This section helps you to configure the yml file for your python project.
 
 **Choosing Python versions to test against**
 
-- Tell us what your build environment is. This is an option setting and if ommitted Ubuntu 12.04 is used as a default.
+- Tell us what your build environment is. This is an optional setting and if omitted Ubuntu 12.04 is used as the default.
     .. code-block:: bash
     
         # Build Environment
@@ -19,7 +19,7 @@ This section helps you to configure the yml file for your python project.
 
 **Python versions for testing** :
 
-- Set the appropriate language and the version number. You can test against multiple version for a single push by adding more entries. Python minions use ``python`` by default to set the version.
+- Set the appropriate language and the version number. You can test against multiple versions for a single push by adding more entries. Python minions use ``python`` by default to set the version.
       .. code-block:: python
         
           # language setting
@@ -32,22 +32,22 @@ This section helps you to configure the yml file for your python project.
              - "3.3"
 	     - "pypy"	
 
-- We support for different versions of python like 2.6, 2.7, 3.2, 3.3 and pypy.
+- We support different versions of python like 2.6, 2.7, 3.2, 3.3 and pypy.
  
-- Install dependencies for your project using **install** key.
+- Install dependencies for your project using the **install** key.
 	.. code-block:: python
 
 	     install: "pip install -r requirements.txt --use-mirrors"
 
 
-- **Test scripts** : Use **script** key in shippable.yml file to specify what command to run tests with.
+- **Test scripts** : Use the **script** key in the shippable.yml file to specify what command to run tests with.
 	.. code-block:: python
 
 		# command to run tests
 		script: nosetests
 	
 
-- Test against multiple versions of Django by setting it on **env** key and then install the required dependencies for it using install key.
+- Test against multiple versions of Django by setting the **env** key and then install the required dependencies for it using the install key.
 	.. code-block:: python
 
 		env:
