@@ -15,9 +15,9 @@ This section helps you specify the build environment and other configuration spe
         # Build Environment
         build_environment: ubuntu1204
 
-- Set the appropriate languge and version number. You can test against multiple versions for a single push by adding more entries. Scala minions use ``scala`` by default to set the version.
+- Set the appropriate language and version number. You can test against multiple versions for a single push by adding more entries. Scala minions use ``scala`` by default to set the version.
   
-- We support SBT,oraclejdk6, oraclejdk7 ,openjdk6 and openjdk7. Specify Scala versions like 2.8.x, 2.9.x and 2.10.x in the shippable.yml file as shown below.
+- We support SBT, oraclejdk8, oraclejdk7, openjdk6 and openjdk7. Specify Scala versions like 2.8.x, 2.9.x and 2.10.x in the shippable.yml file as shown below.
     .. code-block:: python
 	
 	language: scala
