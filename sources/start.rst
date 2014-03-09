@@ -4,7 +4,7 @@
 
 .. _getstarted:
 
-Getting Started Test
+Getting Started
 ===============
 
 **Step 1** : Sign Up
