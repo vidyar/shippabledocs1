@@ -13,16 +13,16 @@ Build Minions and Build configuration are two things that you should care the mo
 **Minions**
 -----------
 
-Minions are docker based containers that run your builds and tests. You can think of them as Build VMs. Each minion runs one build at a time, so more the number of minions you have, more the concurrency you will get.  
+Minions are Docker based containers that run your builds and tests. You can think of them as Build VMs. Each minion runs one build at a time, so the more minions you have, the more concurrency you will get.  
 
 We automatically create one minion for you when you first sign in to Shippable. Depending on your subscription, you can create more minions by going to Settings->Minions and clicking on the + sign.
 
-Each minion starts from a base image and can be customized by specifying ``before_install`` scripts in the YML file. It can be configured to run any package, library, or service that your application requires. There are some preinstalled tools and services that you can use to customize them even further. 
+Each minion starts from a base image and can be customized by specifying ``before_install`` scripts in the YML file. A minion can be configured to run any package, library, or service that your application requires. There are some preinstalled tools and services that you can use to customize your minions even further. 
 
 Operating Systems
 .................
 
-All our Linux minions start from a vanilla base image from the Docker registry. We will support all images as a starting point for your minion. It can be further customized by using ``before_install`` and ``install`` tags in ``shippable.yml`` that is in the root of your code repository.
+All our Linux minions start from a vanilla base image from the Docker registry. We support all images as a starting point for your minion. It can be further customized by using the ``before_install`` and ``install`` tags in ``shippable.yml`` that is in the root of your code repository.
 
 (Coming soon) Our Windows minions are based on AWS AMI for Windows 2012.
 
