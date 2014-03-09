@@ -11,13 +11,13 @@ This section helps you to configure the yml file for your node_js project.
 
 **Node_js versions for testing** :
 
-- Tell us what your build environment is. This is an option setting and if ommitted Ubuntu 12.04 is used as a default.
+- Tell us what your build environment is. This is an optional setting and if omitted Ubuntu 12.04 is used as the default.
     .. code-block:: bash
     
         # Build Environment
               build_environment: ubuntu1204
 
-- Set the appropriate language and the version number. You can test against multiple version for a single push by adding more entries. node_js minions use ``node_js`` by default to set the version.
+- Set the appropriate language and the version number. You can test against multiple versions for a single push by adding more entries. node_js minions use ``node_js`` by default to set the version.
     .. code-block:: bash
 	
 	# language setting
@@ -40,7 +40,7 @@ This section helps you to configure the yml file for your node_js project.
 		
 		script: npm test
 
--  You can also add the testing framework like Vows, Expresso in package.json file.
+-  You can also add testing frameworks like Vows, Expresso in the package.json file.
 
 -  To test using Vows:
 	.. code-block:: python 	
@@ -65,6 +65,6 @@ This section helps you to configure the yml file for your node_js project.
       
 -  Keep the output of test and code coverage generated in the Shippable folders to get the visualization of your reports.
 
--  If your test runner uses junit format, then you can save the output in shippable/testresults folder inorder for shippable to parse the test reports. You can also save the output of code coverage in shippable/codecoverage folder to parse the coverage reports.
+-  If your test runner uses the junit format, then you can save the output in shippable/testresults folder so that shippable can parse the test reports. You can also save the output of code coverage in shippable/codecoverage folder so that shippable can parse the coverage reports.
 
  
