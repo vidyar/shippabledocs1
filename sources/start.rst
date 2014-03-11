@@ -88,7 +88,7 @@ Builds can be triggered through webhooks or manually through Shippable.com.
 
 **Webhooks**
 
-Webhooks are user-defined HTTP callbacks. They are usually triggered by some event, such as pushing code to a repository or creating a pull request. Your builds will run automatically when webhooka are triggered. Further details are here.
+Webhooks are user-defined HTTP callbacks. They are usually triggered by some event, such as pushing code to a repository or creating a pull request. Your builds will run automatically when webhooks are triggered. 
 
 **Manual Builds** 
 
