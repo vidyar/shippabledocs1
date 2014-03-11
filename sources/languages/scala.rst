@@ -25,7 +25,7 @@ This section helps you specify the build environment and other configuration spe
    	   - 2.8.2
    	   - 2.9.2
 
-- Scala builder assumes dependency management based on projeccts like Maven, Gradle or SBT and it will pull down project dependencies automatically before running tests.
+- Scala builder assumes dependency management based on projects like Maven, Gradle or SBT and it will pull down project dependencies automatically before running tests.
 
 - To test against multiple JDKs, use jdk tags. For example, to test against the oraclejdk8, oraclejdk7, openjdk6 and openjdk7
 	.. code-block:: bash
