@@ -12,9 +12,9 @@ Getting Started
 **Step 1** : Sign Up
 --------------------
 
-Shippable uses Github as an auth provider, so you need a Github account to use us. Clicking on the 'Sign in' or 'Sign up' buttons will take you to the standard Github app authorization page and requests you to give Shippable Read permissions to your public data. After authorization, you will be redirected to Shippable site.
+Shippable uses Github as an auth provider, so you need a Github account to use us. Clicking on the 'Sign in' or 'Sign up' buttons will take you to the standard Github app authorization page and requests you to give Shippable Read permission to your public data. After authorization, you will be redirected to Shippable site.
 
-Choose the public or private repositories that you would like to build by clicking on the enable button from settings page and it will take you to Github authorization page to give Shippable Read/Write permissions to your repos.      
+Choose the public or private repositories that you would like to build by clicking on the enable button from settings page and it will take you to the Github authorization page to give Shippable Read/Write permissions to your repos.      
 
 .. note::
     We realize that most people do not want to give write access to their repo. However, we need write permissions to add deploy keys to your repos so that webhooks work. We do not touch anything else in the repo.
