@@ -12,7 +12,7 @@ structure, cross-linking and indexing.
 
 The HTML files are built and hosted on
 [readthedocs.org](https://readthedocs.org/projects/shippable/), appearing
-via proxy on https://docs.shippable.com. The HTML files update
+via proxy on [docs.shippable.com](http://docs.shippable.com/en/latest). The HTML files update
 automatically after each change to the master.
 
 
