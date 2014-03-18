@@ -362,6 +362,11 @@ Redis
 
 Sample Python code using `Redis <https://github.com/Shippable/Redis-buildsample>`_.
 
+----------
+
+**Test and Code Coverage visualization**
+-----------------
+This is a test....
 
 ----------
 
