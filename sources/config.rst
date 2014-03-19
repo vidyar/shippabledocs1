@@ -365,8 +365,41 @@ Sample Python code using `Redis <https://github.com/Shippable/Redis-buildsample>
 ----------
 
 **Test and Code Coverage visualization**
------------------
-This is a test....
+----------------------------------------
+Test results
+............
+To set up test result visualization for a repository.
+
+* Output test results to shippable/testresults folder. 
+* Make sure test results are in junit format.
+
+For example, here is the .yml file for a Python repo -
+
+.. code-block:: bash
+
+  before_script: mkdir -p shippable/testresults
+  script:
+    - nosetests python/sample.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
+
+Examples for other languages can be found in our `Code Samples <samplesref>`_ .
+
+Code coverage
+.............
+To set up test result visualization for a repository.
+
+* Output code coverage output to shippable/codecoverage folder. 
+* Make sure code coverage output is in cobertura xml format.
+
+For example, here is the .yml file for a Python repo -
+
+.. code-block:: bash
+
+  before_script: mkdir -p shippable/codecoverage
+  script:
+    - coverage run --branch python/sample.py
+    - coverage xml -o shippable/codecoverage/coverage.xml python/sample.py
+
+Examples for other languages can be found in our `Code Samples <samplesref>`_.
 
 ----------
 
