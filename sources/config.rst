@@ -282,6 +282,7 @@ All the services are turned off by default and can be turned on by using the ``s
 
 MongoDB
 .......
+
 .. code-block:: bash
   
   # Mongo binds to 127.0.0.1 by default
@@ -381,7 +382,7 @@ For example, here is the .yml file for a Python repo -
   script:
     - nosetests python/sample.py --with-xunit --xunit-file=shippable/testresults/nosetests.xml
 
-Examples for other languages can be found in our `Code Samples <samplesref>`_ .
+Examples for other languages can be found in our :ref:`Code Samples <samplesref>` .
 
 Code coverage
 .............
@@ -399,7 +400,7 @@ For example, here is the .yml file for a Python repo -
     - coverage run --branch python/sample.py
     - coverage xml -o shippable/codecoverage/coverage.xml python/sample.py
 
-Examples for other languages can be found in our `Code Samples <samplesref>`_.
+Examples for other languages can be found in our :ref:`Code Samples <samplesref>`.
 
 ----------
 
