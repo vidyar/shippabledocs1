@@ -63,6 +63,8 @@ A set of common tools are available on all minions. The following is a list of a
   - Redis
   - ElasticSearch
   - Selenium Server
+  - Neo4j
+  - Cassandra
 
 - Headless browser testing tools
 
@@ -297,7 +299,7 @@ MySQL
 
 .. code-block:: bash
   
-  # MySQL binds to 127.0.0.1 by default and is started. default username is shippable with no password
+  # MySQL binds to 127.0.0.1 by default and is started. Default username is shippable with no password
   # Create a DB as part of before script to use it
 
   before_script:
@@ -311,7 +313,7 @@ PostgreSQL
 
 .. code-block:: bash
 
-  # Postgre binds to 127.0.0.1 by default and is started. default username is "postgres" with no password
+  # Postgre binds to 127.0.0.1 by default and is started. Default username is "postgres" with no password
   # Create a DB as part of before script to use it
 
   before_script:
@@ -362,6 +364,29 @@ Redis
 
 
 Sample Python code using `Redis <https://github.com/Shippable/Redis-buildsample>`_.
+
+Neo4j
+.....
+
+.. code-block:: bash
+ 
+ #Neo4j runs on default port 7474
+ services:
+  - neo4j
+
+Sample ruby code using  `neo4j <https://github.com/Shippable/neo4j-buildsample>`_.
+
+
+Cassandra
+..........
+
+.. code-block:: bash
+ 
+ #Cassandra binds to the default localhost 127.0.0.1 and is not started on boot. 
+ services:
+   - cassandra
+
+Sample ruby code using `cassandra <https://github.com/Shippable/cassandra-buildsample>`_.
 
 ----------
 
