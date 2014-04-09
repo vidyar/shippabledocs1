@@ -199,7 +199,7 @@ If you would like to turn submodules off completely -
 environment variables
 .....................
 
-We believe this is one of the powerful features Shippable offers. You can test your projects with multiple different settings for every push into your repo. Every statement of this command will trigger a seperate build with that specific version of the environment variables. 
+We believe this is one of the powerful features Shippable offers. You can test your projects with multiple different settings for every push into your repo. Every statement of this command will trigger a separate build with that specific version of the environment variables. 
 
 .. code-block:: python
         
@@ -211,13 +211,13 @@ We believe this is one of the powerful features Shippable offers. You can test y
 
 .. note::
 
-  Env variables can create an exponential number of builds when comined with ``jdk`` & ``rvm, node_js etc.`` i.e. it is multiplicative
+  Env variables can create an exponential number of builds when combined with ``jdk`` & ``rvm, node_js etc.`` i.e. it is multiplicative
 
 In this setting **4 builds** are triggered
 
 .. code-block:: python
         
-  # nPn builds
+  # npm builds
   node_js:
     - 0.10.24
     - 0.8.14
@@ -249,7 +249,7 @@ You can build specific branches or exclude them if needed.
 build matrix
 ............
 
-This is another powerful feature that Shippable has to offer. You can trigger multiple different test passes for a single code push. You might want to test agaisnt different versions of ruby, or different aspect ratios for your Selenium tests or best yet, just different jdk versions. You can do it all with Shippable's matrix build mechanism.
+This is another powerful feature that Shippable has to offer. You can trigger multiple different test passes for a single code push. You might want to test against different versions of ruby, or different aspect ratios for your Selenium tests or best yet, just different jdk versions. You can do it all with Shippable's matrix build mechanism.
 
 .. code-block:: python
 
@@ -291,7 +291,7 @@ MongoDB
   services:
    - mongodb
 
-Sample Python code using `MongoDB <https://github.com/Shippable/mongodb-buildsample>`_.
+Sample python code using `MongoDB <https://github.com/Shippable/mongodb-buildsample>`_.
 
 
 MySQL
@@ -299,13 +299,13 @@ MySQL
 
 .. code-block:: bash
   
-  # MySQL binds to 127.0.0.1 by default and is started. Default username is shippable with no password
+  # MySQL binds to 127.0.0.1 by default and is started on boot. Default username is shippable with no password
   # Create a DB as part of before script to use it
 
   before_script:
       - mysql -e 'create database myapp_test;'
                                  
-Sample Python code using `MySQL <https://github.com/Shippable/mysql-buildsample>`_.
+Sample python code using `MySQL <https://github.com/Shippable/mysql-buildsample>`_.
 
 
 PostgreSQL
@@ -313,13 +313,13 @@ PostgreSQL
 
 .. code-block:: bash
 
-  # Postgre binds to 127.0.0.1 by default and is started. Default username is "postgres" with no password
+  # Postgre binds to 127.0.0.1 by default and is started on boot. Default username is "postgres" with no password
   # Create a DB as part of before script to use it
 
   before_script:
     - psql -c 'create database myapp_test;' -U postgres
 
-Sample Python code using `PostgreSQL <https://github.com/Shippable/postgresql-buildsample>`_.
+Sample python code using `PostgreSQL <https://github.com/Shippable/postgresql-buildsample>`_.
 
 
 SQLite3
@@ -327,7 +327,7 @@ SQLite3
 
 SQLite is a software library that implements a self-contained, serverless, zero-configuration, transactional SQL database engine. So you can use SQLite, if you do not want to test your code behaviour with other databases.
 
-Sample Python code using `SQLite <https://github.com/Shippable/sqlite-buildsample>`_.
+Sample python code using `SQLite <https://github.com/Shippable/sqlite-buildsample>`_.
 
 
 Elastic Search
@@ -339,7 +339,7 @@ Elastic Search
   services:
       - elasticsearch
 
-Sample Python code using `Elastic Search <https://github.com/Shippable/Elasticsearch-buildsample>`_.
+Sample python code using `Elastic Search <https://github.com/Shippable/Elasticsearch-buildsample>`_.
 
 Memcache
 ........
@@ -350,7 +350,7 @@ Memcache
   services:
       - memcached
 
-Sample Python code using `Memcache <https://github.com/Shippable/Memcache-buildsample>`_.
+Sample python code using `Memcache <https://github.com/Shippable/Memcache-buildsample>`_.
 
 
 Redis
@@ -363,7 +363,7 @@ Redis
       - redis
 
 
-Sample Python code using `Redis <https://github.com/Shippable/Redis-buildsample>`_.
+Sample python code using `Redis <https://github.com/Shippable/Redis-buildsample>`_.
 
 Neo4j
 .....
